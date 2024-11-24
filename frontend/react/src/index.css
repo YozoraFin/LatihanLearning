@@ -1,0 +1,217 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.black {
+    filter: brightness(0);
+}
+
+.background-login {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("assets/login.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.background-login::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.login-container {
+    position: relative;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+}
+
+.background-home {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("assets/home.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.background-home::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.home-container {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar .col-4 {
+    flex: 1;
+}
+
+.search {
+    width: 100%;
+    max-width: 400px;
+    background: #f6f6f6;
+    transition: box-shadow 0.25s;
+}
+
+.search:focus-within {
+    box-shadow: 0 0 2px rgba(0,0,0,0.75);
+}
+
+.search-input {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+.search-input::placeholder,
+.search-icon {
+    color: rgba(0,0,0,0.25);
+}
+
+.fyp {
+    display: block;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.12);
+}
+
+.box {
+    display: block;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12);
+    height: 300px;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.3s ease; /* Add transition for transform */
+}
+
+.box:hover {
+    transform: scale(1.05); /* Scale up the box on hover */
+}
+
+.box-img {
+    object-fit: fill;
+}
+
+.login-page {
+    flex-wrap: wrap;
+    z-index: -2;
+}
+
+.login {
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.12);
+}
+
+.login-input {
+    border: none;
+    outline: none;
+    background: #f7f6f6;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.login-input:hover {
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.5);
+}
+
+.login-input:focus {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    background: #ffffff;
+}
+
+.login-btn {
+    border: none;
+    outline: none;
+    background: white;
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.12);
+    transition: box-shadow 0.3s ease;
+}
+
+.login-btn:hover {
+    box-shadow: 0 1px 6px 0 rgba(0,0,0,0.5);
+}
+
+.detail {
+    margin: 10rem;
+}
+
+.cart-btn {
+    width: 8rem;
+}
