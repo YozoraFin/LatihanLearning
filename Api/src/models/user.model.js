@@ -30,7 +30,7 @@ export const User = db.define('user', {
     },
     gender: {
         type: DataTypes.STRING(10), allowNull: false, validate: {
-            isIn: [['Male', 'Female', 'Other']], // Validasi nilai gender
+            isIn: [['Male', 'Female']], // Validasi nilai gender
         },
     },
     profile_pic: { type: DataTypes.STRING(255), allowNull: true },

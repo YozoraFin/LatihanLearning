@@ -8,22 +8,32 @@ const Product = db.define('product', {
         autoIncrement: true
     },
     productName: {
-        type: DataTypes.STRING(255), allowNull: false
+        type: DataTypes.STRING(255), allowNull: false, validate: {
+            len: [1, 255]
+        }
     },
     productBrand: {
-        type: DataTypes.STRING(255), allowNull: false
+        type: DataTypes.STRING(255), allowNull: false, validate: {
+            len: [1, 255]
+        }
     },
     productColor: {
-        type: DataTypes.STRING(255), allowNull: false
+        type: DataTypes.STRING(255), allowNull: false, validate: {
+            len: [1, 255]
+        }
     },
     productDescription: {
-        type: DataTypes.TEXT, allowNull: false
+        type: DataTypes.TEXT, allowNull: false  //karena longtext gausah validasi
     },
     productPrice: {
-        type: DataTypes.FLOAT, allowNull: false
+        type: DataTypes.FLOAT, allowNull: false, validate: {
+            isFloat: true
+        }
     },
     productQty: {
-        type: DataTypes.INTEGER, allowNull: false
+        type: DataTypes.INTEGER, allowNull: false, validate: {
+            isInt: true
+        }
     },
     productImages: {
         type: DataTypes.JSON, allowNull: false

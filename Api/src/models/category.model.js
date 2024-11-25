@@ -8,7 +8,9 @@ const Category = db.define('category', {
         autoIncrement: true
     },
     categoryName: {
-        type: DataTypes.STRING(255), allowNull: false
+        type: DataTypes.STRING(255), allowNull: false, validate: {
+            len: [1, 255]
+        }
     }
 }, {
     freezeTableName: true,

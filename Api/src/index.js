@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import db from '../src/config/db.js'
 dotenv.config()
 import userController from '../src/controller/user.controller.js'
+import adminController from '../src/controller/admin.controller.js'
 import bodyParser from "body-parser";
 import cors from 'cors'
 
@@ -13,7 +14,8 @@ app.use(bodyParser.json());
 app.use(express.json());
 app.use(cors());
 
-app.use('/users', userController)
+app.use('/users', userController,)
+app.use('/admins', adminController)
 
 app.listen(port, async () => {
   try {
