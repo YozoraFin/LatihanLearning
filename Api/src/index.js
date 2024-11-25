@@ -4,6 +4,8 @@ import db from '../src/config/db.js'
 dotenv.config()
 import userController from '../src/controller/user.controller.js'
 import adminController from '../src/controller/admin.controller.js'
+import categoryController from '../src/controller/category.controller.js'
+import subCategoryController from '../src/controller/sub_category.controller.js'
 import bodyParser from "body-parser";
 import cors from 'cors'
 
@@ -16,6 +18,8 @@ app.use(cors());
 
 app.use('/users', userController,)
 app.use('/admins', adminController)
+app.use('/category', categoryController)
+app.use('/sub_category', subCategoryController)
 
 app.listen(port, async () => {
   try {

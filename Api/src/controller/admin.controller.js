@@ -17,7 +17,8 @@ router.get("/", async (req, res) => {
 
 router.get("/admin/:id", async (req, res) => {
   try {
-    const admin = await Admin.findByPk(req?.params?.id);
+    const {id} = req.params
+    const admin = await Admin.findByPk(id);
     return res.status(200).json({ data: admin });
   } catch (error) {
     return res.status(500).json({ message: error.message });
@@ -29,17 +30,17 @@ router.post("/register", validateRegister, async (req, res) => {
     const { firstName, lastName, email, password, gender } = req.body;
     const hashPassword = bcryptUtils.hashPassword(password);
 
-    const existingAdmin = await Admin.findOne({ where: { email } });
+    const existingAdmin = await Admin.findOne({ where: { email: email } });
     if (existingAdmin) {
       return res.status(400).json({ message: "Email already registered" });
     }
 
     const createAdmin = await Admin.create({
-      firstName,
-      lastName,
-      email,
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
       password: hashPassword,
-      gender,
+      gender: gender,
     });
 
     return res.status(201).json({
@@ -61,7 +62,7 @@ router.post("/login", validateLogin, async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const admin = await Admin.findOne({ where: { email } });
+    const admin = await Admin.findOne({ where: { email: email } });
     if (!admin) {
       return res.status(404).json({ message: "Admin Not Found" });
     }
