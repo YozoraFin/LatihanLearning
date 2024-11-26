@@ -1,15 +1,28 @@
 import path from "path";
 import multer from "multer";
+import { fileURLToPath } from 'url';
 
 // create directory
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, path.join(__dirname, "../uploads"));
+//   },
+//   filename: function (req, file, cb) {
+//     // unique string sequence to save file in uploads dir
+//     const uniquePrefix = Date.now() + Math.random().toString();
+//     cb(null, uniquePrefix + file.originalname);
+//   },
+// });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.join(__dirname, "../uploads"));
   },
   filename: function (req, file, cb) {
     // unique string sequence to save file in uploads dir
-    const uniquePrefix = Date.now() + Math.random().toString();
-    cb(null, uniquePrefix + file.originalname);
+    const uniquePrefix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, uniquePrefix + '-' + file.originalname);
   },
 });
 

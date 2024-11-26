@@ -6,6 +6,7 @@ import userController from '../src/controller/user.controller.js'
 import adminController from '../src/controller/admin.controller.js'
 import categoryController from '../src/controller/category.controller.js'
 import subCategoryController from '../src/controller/sub_category.controller.js'
+import productController from '../src/controller/product.controller.js'
 import bodyParser from "body-parser";
 import cors from 'cors'
 
@@ -20,6 +21,7 @@ app.use('/users', userController,)
 app.use('/admins', adminController)
 app.use('/category', categoryController)
 app.use('/sub_category', subCategoryController)
+app.use('/product', productController)
 
 app.listen(port, async () => {
   try {

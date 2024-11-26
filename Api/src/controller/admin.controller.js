@@ -47,10 +47,7 @@ router.post("/register", validateRegister, async (req, res) => {
       message: "Admin Created Succesfully",
       data: {
         adminId: createAdmin.adminId,
-        firstName: createAdmin.firstName,
-        lastName: createAdmin.lastName,
-        email: createAdmin.email,
-        gender: createAdmin.gender,
+        createAdmin,
       },
     });
   } catch (error) {
@@ -64,7 +61,7 @@ router.post("/login", validateLogin, async (req, res) => {
 
     const admin = await Admin.findOne({ where: { email: email } });
     if (!admin) {
-      return res.status(404).json({ message: "Admin Not Found" });
+      return res.status(404).json({ message: "Email Not Found" });
     }
 
     const isPasswordValid = bcryptUtils.comparePassword(

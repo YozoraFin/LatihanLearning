@@ -8,7 +8,7 @@ const router = express.Router();
 
 router.get("/", async (req, res) => {
   try {
-    const allSubCategory = SubCategory.findAll({
+    const allSubCategory = await SubCategory.findAll({
       include: [{ model: Category }, { model: Product }],
     });
 
@@ -65,7 +65,7 @@ router.get("/product/:id", async (req, res) => {
 
 router.post("/create", async (req, res) => {
   try {
-    const { subCategoryName } = req.body;
+    const { subCategoryName, categoryId } = req.body;
     const subCategory = await SubCategory.findOne({
       where: { sub_categoryName: subCategoryName },
     });
@@ -76,6 +76,7 @@ router.post("/create", async (req, res) => {
 
     const createSubCategory = await SubCategory.create({
       sub_categoryName: subCategoryName,
+      categoryId: categoryId,
     });
 
     return res.status(201).json({
