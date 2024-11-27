@@ -47,10 +47,7 @@ router.post("/register", validateRegister, async (req, res) => {
       message: "Admin Created Succesfully",
       data: {
         adminId: createAdmin.adminId,
-        firstName: createAdmin.firstName,
-        lastName: createAdmin.lastName,
-        email: createAdmin.email,
-        gender: createAdmin.gender,
+        createAdmin,
       },
     });
   } catch (error) {
