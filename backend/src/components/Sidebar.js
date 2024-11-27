@@ -29,36 +29,13 @@ export default function Sidebar() {
 								</p>
 							</Link>
 						</li>
-						<li key={'prakerin'} className="nav-item">
-							<Link to={'/admin/prakerin'} className={location.pathname.indexOf('/prakerin') > -1 ? 'nav-link active' : 'nav-link'}>
+						<li key={'user'} className="nav-item">
+							<Link to={'/admin/user'} className={location.pathname.indexOf('/user') > -1 ? 'nav-link active' : 'nav-link'}>
 								<i className="nav-icon fas fa-briefcase"></i>
 								<p>
-									Prakerin
+									User
 								</p>
 							</Link>
-						</li>
-						<li key={'laporan'} className="nav-item">
-							<a className={location.pathname.indexOf('/laporan-siswa') + location.pathname.indexOf('/laporan-pembimbing') > -2 ? 'nav-link active' : 'nav-link'}>
-								<i className="nav-icon fas fa-envelope"></i>
-								<p>
-									Laporan
-									<i className="right fas fa-angle-left"></i>
-								</p>
-							</a>
-							<ul className="nav nav-treeview">
-								<li key={'laporan-siswa'} className="nav-item">
-									<Link to={'/admin/laporan-siswa'} className={location.pathname.indexOf('/laporan-siswa') > -1 ? "nav-link active" : "nav-link"}>
-										<i className="fas fa-children nav-icon"></i>
-										<p>Laporan Siswa</p>
-									</Link>
-								</li>
-								<li key={'laporan-pembimbing'} className="nav-item">
-									<Link to={'/admin/laporan-pembimbing'} className={location.pathname.indexOf('/laporan-pembimbing') > -1 ? 'nav-link active' : 'nav-link'}>
-										<i className="fas fa-user nav-icon"></i>
-										<p>Laporan Pembimbing</p>
-									</Link>
-								</li>
-							</ul>
 						</li>
 						<li key={'dataa'} className="nav-item">
 							<a className={location.pathname.indexOf('/siswa') + location.pathname.indexOf('/perusahaan') + location.pathname.indexOf('/pembimbing-perusahaan') + location.pathname.indexOf('/pembimbing-sekolah') + location.pathname.indexOf('/kelas') + location.pathname.indexOf('/bidang') > -6 ? 'nav-link active' : 'nav-link'}>
@@ -69,34 +46,22 @@ export default function Sidebar() {
 								</p>
 							</a>
 							<ul className="nav nav-treeview">
-								<li key={'siswa'} className="nav-item">
-									<Link to={'/admin/siswa'} className={location.pathname.indexOf('/siswa') > -1 ? "nav-link active" : "nav-link"}>
+								<li key={'produk'} className="nav-item">
+									<Link to={'/admin/produk'} className={location.pathname.indexOf('/produk') > -1 ? "nav-link active" : "nav-link"}>
 										<i className="far fa-circle nav-icon"></i>
-										<p>Siswa</p>
+										<p>Produk</p>
 									</Link>
 								</li>
-								<li key={'kelas'} className="nav-item">
-									<Link to={'/admin/kelas'} className={location.pathname.indexOf('/kelas') > -1 ? 'nav-link active' : 'nav-link'}>
+								<li key={'kategori'} className="nav-item">
+									<Link to={'/admin/kategori'} className={location.pathname.indexOf('/kategori') > -1 ? 'nav-link active' : 'nav-link'}>
 										<i className="far fa-circle nav-icon"></i>
-										<p>Kelas</p>
+										<p>Kategori</p>
 									</Link>
 								</li>
-								<li key={'perusahaan'} className="nav-item">
-									<Link to={'/admin/perusahaan'} className={location.pathname.indexOf('/perusahaan') + location.pathname.indexOf('/bidang') > -2 ? 'nav-link active' : 'nav-link'}>
+								<li key={'sub-kategori'} className="nav-item">
+									<Link to={'/admin/sub-kategori'} className={location.pathname.indexOf('/sub-kategori') > -2 ? 'nav-link active' : 'nav-link'}>
 										<i className="far fa-circle nav-icon"></i>
-										<p>Perusahaan</p>
-									</Link>
-								</li>
-								<li key={'pembimbing-perusahaan'} className="nav-item">
-									<Link to={'/admin/pembimbing-perusahaan'} className={location.pathname.indexOf('/pembimbing-perusahaan') > -1 ? 'nav-link active' : 'nav-link'}>
-										<i className="far fa-circle nav-icon"></i>
-										<p>Pembimbing Perusahaan</p>
-									</Link>
-								</li>
-								<li key={'pembimbing-sekolah'} className="nav-item">
-									<Link to={'/admin/pembimbing-sekolah'} className={location.pathname.indexOf('/pembimbing-sekolah') > -1 ? 'nav-link active' : 'nav-link'}>
-										<i className="far fa-circle nav-icon"></i>
-										<p>Pembimbing Sekolah</p>
+										<p>Sub-kategori</p>
 									</Link>
 								</li>
 							</ul>
