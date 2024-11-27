@@ -20,7 +20,7 @@ app.use(cors());
 app.use('/users', userController,)
 app.use('/admins', adminController)
 app.use('/category', categoryController)
-app.use('/sub_category', subCategoryController)
+app.use('/subcategory', subCategoryController)
 app.use('/product', productController)
 
 app.listen(port, async () => {
